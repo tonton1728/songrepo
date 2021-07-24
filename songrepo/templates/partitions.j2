@@ -1,0 +1,10 @@
+{% extends 'base.j2' %}
+{% block content %}
+<ul>
+{% for partition in partitions %}
+<li>
+	<a href='/songrepo/partition/{{partition.id}}'> {{ partition.title }} </a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

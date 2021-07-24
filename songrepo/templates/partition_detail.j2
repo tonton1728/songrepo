@@ -1,0 +1,10 @@
+{% extends 'base.j2' %}
+{% block content %}
+<ul>
+<li> {{ title }} </li>
+<li> {{ author }} </li>
+{% if ref != '' %}
+<li> {{ ref }} </li>
+{% endif %}
+</ul>
+{% endblock %}
