@@ -25,6 +25,7 @@ def partition_view(request, partition_id):
     context = {
         'title' : partition.title,
         'author' : partition.authors.name,
-        'ref' : partition.ref
+        'ref' : partition.ref,
+        'partition_files' : partition.partition_files.all
     }
     return render(request, 'partition_detail.j2', context)

@@ -6,5 +6,8 @@
 {% if ref != '' %}
 <li> {{ ref }} </li>
 {% endif %}
+{% for file in partition_files %}
+<li> <a href={{ file.url }}> {{ file.name }} </a> {{ file }}
+{% endfor %}
 </ul>
 {% endblock %}
