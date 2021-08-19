@@ -1,0 +1,56 @@
+html {
+    width: 100%;
+}
+
+.header {
+    background-color: #fcba03;
+    width: 100%;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.header .login {
+    position: absolute;
+    right:  10px;
+}
+
+table,
+td, th {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+table.partition_ref, .partition_ref tbody, .partition_ref tr {
+    width:  100%;
+}
+
+td, th {
+    width:  33%
+}
+
+.ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: 0;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+ .header .open {
+  position: absolute;
+  background: #ffdb75;
+  list-style-type: none;
+  left: 160px;
+  top: 10px;
+  padding: 2px;
+  border-radius: 6px
+}

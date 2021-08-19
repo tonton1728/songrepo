@@ -1,0 +1,12 @@
+{% extends 'base.j2' %}
+{% block content %}
+<ul>
+{% for partition in partition_list %}
+{% for file in partition %}
+<li>
+<a href={{ file.url }}> {{ file.name }} </a>
+</li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% endblock %}

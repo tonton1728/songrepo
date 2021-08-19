@@ -13,6 +13,12 @@ class partitions(models.Model):
     #partition_files = models.FileField(storage=partitionsstorage, blank=True)
     partition_files = models.ManyToManyField('partition_file')
 
+    def __str__(self):
+        if self.ref: 
+            return "%s - %s - %s "%(self.title, self.ref, self.authors.name)
+        else:
+            return "%s - %s"%(self.title, self.authors.name)
+
 
 class authors(models.Model):
     name = models.CharField(max_length=50)
@@ -37,3 +43,10 @@ class partition_file(models.Model):
 
     def name(self):
         return self.partition_file.name
+
+class playlist(models.Model):
+    name = models.CharField(max_length=200)
+    partition_list = models.ManyToManyField('partitions')
+
+    def __str__(self):
+        return self.name

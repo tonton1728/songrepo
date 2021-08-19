@@ -1,0 +1,10 @@
+{% extends 'base.j2' %}
+{% block content %}
+<ul>
+{% for playlist in playlists %}
+<li>
+	<a href='/songrepo/playlist/{{playlist.id}}'> {{ playlist.name }} </a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

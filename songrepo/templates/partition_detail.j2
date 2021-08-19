@@ -1,13 +1,53 @@
 {% extends 'base.j2' %}
 {% block content %}
+<table class='partition_ref'>
+<tr>
+<th>
+Titre
+</th>
+<th>
+Auteur
+</th>
+<th>
+Reférence 
+</th>
+</tr>
+<tr>
+<td>
+{{ title }}
+</td>
+<td>
+<a href="/songrepo/partitions/search?search_type=author&search_content={{author}}" > {{ author }} </a>
+</td>
+<td>
+{{ ref }}
+</td>
+</tr>
+<!-- </table>
+<table class='partition_extended'> -->
+<tr>
+<th colspan=2>
+Partitions en PDF
+</th>
+<th>
+Catégories
+</th>
+</tr>
+<tr>
+<td colspan=2>
 <ul>
-<li> {{ title }} </li>
-<li> {{ author }} </li>
-{% if ref != '' %}
-<li> {{ ref }} </li>
-{% endif %}
 {% for file in partition_files %}
-<li> <a href={{ file.url }}> {{ file.name }} </a> {{ file }}
+<li> <a href={{ file.url }}> {{ file.name }} </a> </li>
 {% endfor %}
 </ul>
+</td>
+<td>
+<ul>
+{% for type in types %}
+<li> <a href="/songrepo/partitions/search?search_type=type&search_content={{type}}" >{{ type }} </a></li> 
+{% endfor %}
+</ul>
+</td>
+</tr>
+</table>
 {% endblock %}

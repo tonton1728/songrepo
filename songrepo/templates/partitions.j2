@@ -1,5 +1,13 @@
 {% extends 'base.j2' %}
 {% block content %}
+<form action="/songrepo/partitions/search" method="get">
+  <select id="search_type" name="search_type"> 
+       <option value="type" selected> catégorie </option>
+       <option value="author"> auteur / Compositeur </option>
+  </select>
+  <input id="search_content" name="search_content" type="text">
+  <input type="submit" value="Search">
+</form>
 <ul>
 {% for partition in partitions %}
 <li>
